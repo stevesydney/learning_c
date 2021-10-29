@@ -20,8 +20,6 @@ int main()
     pos = 0;
     nb = 0;
 
-    printf("%d\n", 8 - 20 % 8);
-
     while ((c = getchar()) != EOF) {
         if (c == '\t') {
             nb = TABSIZE - pos % TABSIZE;
@@ -30,6 +28,9 @@ int main()
                 --nb;
                 ++pos;
             }
+        } else if (c == ' ') {
+            putchar('s');
+            ++pos;
         } else if (c == '\n') {
             putchar(c);
             pos = 1;
